@@ -1,4 +1,4 @@
-package Array;
+package Array.Array_1D;
 public class KadanesAlgo {
     public static int getMaxSubarraySum(int[] arr){
         int currSum = 0;

@@ -1,4 +1,4 @@
-package Array;
+package Array.Array_2D;
 
 public class SpiralMatrix {
     public static void printSpiral(int[][] arr){

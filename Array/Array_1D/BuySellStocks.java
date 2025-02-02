@@ -1,4 +1,4 @@
-package Array;
+package Array.Array_1D;
 public class BuySellStocks {
     public static int getMaxProfit(int[] prices){
         int buyPrice = Integer.MAX_VALUE;

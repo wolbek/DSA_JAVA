@@ -1,4 +1,4 @@
-package Array;
+package Array.Array_1D;
 public class BinarySearch {
     public static int binarySearch(int[] arr, int key){
         int start =0;

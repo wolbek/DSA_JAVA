@@ -1,4 +1,4 @@
-package Array;
+package Array.Array_1D;
 public class TrappedRainwater {
     public static int getWaterTrapped(int[] arr){
         int len = arr.length;
