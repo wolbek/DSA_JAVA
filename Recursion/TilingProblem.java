@@ -8,10 +8,10 @@ public class TilingProblem {
         }
 
         // Place tile horizontally (uses 2 columns) or vertically (uses 1 column)
-        int horizontal = possibleArrangements(boardCol-2);
-        int vertical = possibleArrangements(boardCol-1);
+        int possibleArrangementsAfterHorizontalPlaced = possibleArrangements(boardCol-2);
+        int possibleArrangementsAfterVerticallyPlaced = possibleArrangements(boardCol-1);
 
-        return horizontal + vertical;
+        return possibleArrangementsAfterHorizontalPlaced + possibleArrangementsAfterVerticallyPlaced;
 
     }
     public static void main(String[] args){
