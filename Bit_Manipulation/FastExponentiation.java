@@ -18,6 +18,7 @@ public class FastExponentiation {
     public static void main(String[] args){
         int num = 3;
         int power = 5;
-        System.out.println(getAnswer(3,5));
+        System.out.println(getAnswer(num, power));
     }
 }
+
