@@ -1,5 +1,7 @@
 package Binary_Trees;
 
+import java.util.*;
+
 public class BinaryTrees {
     
     static class Node {
@@ -56,6 +58,37 @@ public class BinaryTrees {
             postorder(root.right);
             System.out.print(root.data + " ");
         }
+
+        public static void levelOrder(Node root){
+            if(root == null){ // Nothing to print if root is null
+                return;
+            }
+
+            Queue<Node> q = new LinkedList<>(); // Here, as we will be storing null as Node object in queue, we have to use LinkedList, as ArrayDeque does not allow insertion of null. 
+            Node poppedElement;
+            q.add(root);
+            q.add(null);
+            while(!q.isEmpty()){
+                poppedElement = q.remove();
+                if(poppedElement==null){
+                    System.out.println();
+                    if(!q.isEmpty()) { // You know this would be hit many times and the next condition would hit single time, so keeping this at top in "if". Or else both conditions would be hit every time.
+                        q.add(null);
+                    }else{
+                        break;
+                    }
+                } 
+                else{
+                    System.out.print(poppedElement.data + " ");
+                    if(poppedElement.left!= null){
+                        q.add(poppedElement.left);
+                    }
+                    if(poppedElement.right!=null){
+                        q.add(poppedElement.right);
+                    }
+                } 
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -67,5 +100,7 @@ public class BinaryTrees {
         BinaryTree.inorder(root);
         System.out.println();
         BinaryTree.postorder(root);
+        System.out.println();
+        BinaryTree.levelOrder(root);
     }
 }
