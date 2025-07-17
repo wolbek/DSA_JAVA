@@ -38,6 +38,15 @@ public class BinaryTrees {
             preorder(root.left);
             preorder(root.right);
         }
+
+        public static void inorder(Node root){
+            if(root == null) {
+                return;
+            }
+            inorder(root.left);
+            System.out.print(root.data + " ");
+            inorder(root.right);
+        }
     }
 
     public static void main(String[] args) {
@@ -45,5 +54,7 @@ public class BinaryTrees {
         Node root = BinaryTree.buildTreeFromPreorderNodes(nodes); // buildTree is a static function, so you do not need to create object of the class to call it, you can call it using class.
         System.out.println(root.data); // root is a Node object, that is, a pointer to a value, not the value, so we need to print the value.
         BinaryTree.preorder(root);
+        System.out.println();
+        BinaryTree.inorder(root);
     }
 }
