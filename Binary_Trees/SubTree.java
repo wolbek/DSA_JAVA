@@ -29,6 +29,14 @@ public class SubTree {
     }
 
     public static void main(String[] args) {
+
+        /*
+         *          1
+         *         / \
+         *        2   3
+         *       / \   \
+         *      4  5    6
+         */
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
@@ -36,6 +44,11 @@ public class SubTree {
         root.left.right = new Node(5);
         root.right.right = new Node(6);
 
+        /*
+         *         2
+         *        / \
+         *       4   5
+         */
         Node subTreeRoot = new Node(2);
         subTreeRoot.left = new Node(4);
         subTreeRoot.right = new Node(5);

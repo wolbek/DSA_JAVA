@@ -92,6 +92,13 @@ public class BinaryTrees {
     }
 
     public static void main(String[] args) {
+        /* 
+         *           1
+         *          / \
+         *         2   3
+         *        / \ / \
+         *       4  5 6  7
+        */
         int[] nodes = {1,2,4,-1,-1,5,-1,-1,3,6,-1,-1,7,-1,-1}; // nodes in preorder sequence.
         Node root = BinaryTree.buildTreeFromPreorderNodes(nodes); // buildTree is a static function, so you do not need to create object of the class to call it, you can call it using class.
         System.out.println(root.data); // root is a Node object, that is, a pointer to a value, not the value, so we need to print the value.
