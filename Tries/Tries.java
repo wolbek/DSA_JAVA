@@ -28,12 +28,32 @@ public class Tries {
         curr.eow = true;
     }
 
+    public static boolean search(String key){ // O(L)
+        Node curr = root;
+        for(int level=0;level<key.length();level++){
+            int i = key.charAt(level) - 'a';
+            if(curr.children[i] == null){
+                return false;
+            }
+            curr = curr.children[i];
+        }
+       
+        return curr.eow;
+    }
+
     public static void main(String[] args){
         String[] words = {"the", "a", "there", "their", "any", "thee"};
 
+        // Insert
         for(int i =0;i<words.length;i++){
             insert(words[i]);
         }
+
+        // Search
+        System.out.println(search("thee"));
+        System.out.println(search("thor"));
+        System.out.println(search("any"));
+        System.out.println(search("an"));
     }
 }
 
