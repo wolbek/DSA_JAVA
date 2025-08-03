@@ -17,12 +17,12 @@ public class Tries {
 
     public static void insert(String word) { // O(L)
         Node curr = root;
-        for(int level=0;level<word.length();level++){
-            int i = word.charAt(level) - 'a';
-            if(curr.children[i] == null) {
-                curr.children[i] = new Node();
+        for(int i=0; i<word.length(); i++){
+            int idx = word.charAt(i) - 'a';
+            if(curr.children[idx] == null) {
+                curr.children[idx] = new Node();
             }
-            curr = curr.children[i];
+            curr = curr.children[idx];
         }
 
         curr.eow = true;
@@ -30,12 +30,12 @@ public class Tries {
 
     public static boolean search(String key){ // O(L)
         Node curr = root;
-        for(int level=0;level<key.length();level++){
-            int i = key.charAt(level) - 'a';
-            if(curr.children[i] == null){
+        for(int i=0; i<key.length(); i++){
+            int idx = key.charAt(i) - 'a';
+            if(curr.children[idx] == null){
                 return false;
             }
-            curr = curr.children[i];
+            curr = curr.children[idx];
         }
        
         return curr.eow;
@@ -56,7 +56,4 @@ public class Tries {
         System.out.println(search("an"));
     }
 }
-
-
-
 
