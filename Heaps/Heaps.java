@@ -24,6 +24,11 @@ public class Heaps {
             }
 
         }
+
+        public int peek(){
+            return arr.get(0);
+        }
+
     }
 
     public static void main(String[] args){
@@ -32,5 +37,7 @@ public class Heaps {
         h.add(4);
         h.add(1);
         h.add(5);
+
+        System.out.println(h.peek());
     }
 }
