@@ -67,46 +67,50 @@ public class LargestBST {
 
     }
 
-    // My first attempt. I used checks for invalidity. But in this case checks for validity were much less. So should've used that here.
+    /*
+    
+    Your first attempt. You used checks for invalidity. But in this case checks for validity were much less. So should've used that here.
 
-    // public static Info validBST(Node root){
+    public static Info validBST(Node root){
 
-    //     if(root == null){
-    //         return new Info(null,null,0, true);
-    //     }
+        if(root == null){
+            return new Info(null,null,0, true);
+        }
 
-    //     Info leftSubtreeInfo = validBST(root.left);
-    //     Info rightSubtreeInfo = validBST(root.right);
+        Info leftSubtreeInfo = validBST(root.left);
+        Info rightSubtreeInfo = validBST(root.right);
 
-    //     if(leftSubtreeInfo.isValidBST == false || rightSubtreeInfo.isValidBST == false){ // If either or both are not valid BST return with the current max
-    //         return new Info(null, null, Math.max(leftSubtreeInfo.maxSizeOfValidBST, rightSubtreeInfo.maxSizeOfValidBST), false);
-    //     }
+        if(leftSubtreeInfo.isValidBST == false || rightSubtreeInfo.isValidBST == false){ // If either or both are not valid BST return with the current max
+            return new Info(null, null, Math.max(leftSubtreeInfo.maxSizeOfValidBST, rightSubtreeInfo.maxSizeOfValidBST), false);
+        }
 
-    //     if((leftSubtreeInfo.maxSizeOfValidBST==0 && leftSubtreeInfo.isValidBST == true) || (rightSubtreeInfo.maxSizeOfValidBST==0 && rightSubtreeInfo.isValidBST == true)){
-    //         return new Info(root, root, 1, true);
-    //     }
-    //     if(leftSubtreeInfo.max == null){
-    //         if(root.data >= rightSubtreeInfo.max.data){
-    //             return new Info(root, rightSubtreeInfo.max, rightSubtreeInfo.maxSizeOfValidBST, false);
-    //         } else{
-    //             return new Info(root, rightSubtreeInfo.max, rightSubtreeInfo.maxSizeOfValidBST + 1, true);
-    //         }
-    //     }
-    //     if(rightSubtreeInfo.min == null){
-    //         if(root.data <= leftSubtreeInfo.max.data){
-    //             return new Info(leftSubtreeInfo.min, root, leftSubtreeInfo.maxSizeOfValidBST, false);
-    //         } else{
-    //              return new Info(leftSubtreeInfo.min, root, leftSubtreeInfo.maxSizeOfValidBST + 1, true);
-    //         }
-    //     }
-    //     // If reaches here means both are not null
-    //     // So we check for false comparison
-    //     if((root.data <= leftSubtreeInfo.max.data) || (root.data >= rightSubtreeInfo.min.data)){
-    //         return new Info(null,null, Math.max(leftSubtreeInfo.maxSizeOfValidBST, rightSubtreeInfo.maxSizeOfValidBST), false);
-    //     }
+        if((leftSubtreeInfo.maxSizeOfValidBST==0 && leftSubtreeInfo.isValidBST == true) || (rightSubtreeInfo.maxSizeOfValidBST==0 && rightSubtreeInfo.isValidBST == true)){
+            return new Info(root, root, 1, true);
+        }
+        if(leftSubtreeInfo.max == null){
+            if(root.data >= rightSubtreeInfo.max.data){
+                return new Info(root, rightSubtreeInfo.max, rightSubtreeInfo.maxSizeOfValidBST, false);
+            } else{
+                return new Info(root, rightSubtreeInfo.max, rightSubtreeInfo.maxSizeOfValidBST + 1, true);
+            }
+        }
+        if(rightSubtreeInfo.min == null){
+            if(root.data <= leftSubtreeInfo.max.data){
+                return new Info(leftSubtreeInfo.min, root, leftSubtreeInfo.maxSizeOfValidBST, false);
+            } else{
+                 return new Info(leftSubtreeInfo.min, root, leftSubtreeInfo.maxSizeOfValidBST + 1, true);
+            }
+        }
+        // If reaches here means both are not null
+        // So we check for false comparison
+        if((root.data <= leftSubtreeInfo.max.data) || (root.data >= rightSubtreeInfo.min.data)){
+            return new Info(null,null, Math.max(leftSubtreeInfo.maxSizeOfValidBST, rightSubtreeInfo.maxSizeOfValidBST), false);
+        }
         
-    //     // If reaches here then both are not null and are valid BST
-    //     return new Info(leftSubtreeInfo.min, rightSubtreeInfo.max, leftSubtreeInfo.maxSizeOfValidBST + rightSubtreeInfo.maxSizeOfValidBST + 1, true);
+        // If reaches here then both are not null and are valid BST
+        return new Info(leftSubtreeInfo.min, rightSubtreeInfo.max, leftSubtreeInfo.maxSizeOfValidBST + rightSubtreeInfo.maxSizeOfValidBST + 1, true);
 
-    // }
+    }
+
+    */
 }

@@ -37,25 +37,29 @@ public class SumTree {
         BinaryTree.preorder(root);
     }
 
-    // Your initial code, which would traverse the whole subtree for every node, which is very heavy computing.
+    /*
+    
+    Your initial code, which would traverse the whole subtree for every node, which is very heavy computing.
 
-    // public static void traverseTree(Node root) {
-    //     if(root == null){
-    //         return;
-    //     }
-    //     root.data = sumTree(root);
-    //     traverseTree(root.left);
-    //     traverseTree(root.left);
-    // }
+    public static void traverseTree(Node root) {
+        if(root == null){
+            return;
+        }
+        root.data = sumTree(root);
+        traverseTree(root.left);
+        traverseTree(root.left);
+    }
 
-    // public static int sumTree(Node root) {
-    //     if(root == null) {
-    //         return 0;
-    //     }
+    public static int sumTree(Node root) {
+        if(root == null) {
+            return 0;
+        }
 
-    //     int leftSubtreeSum = sumTree(root.left);
-    //     int rightSubtreeSum = sumTree(root.right);
+        int leftSubtreeSum = sumTree(root.left);
+        int rightSubtreeSum = sumTree(root.right);
 
-    //     return leftSubtreeSum + rightSubtreeSum;
-    // }
+        return leftSubtreeSum + rightSubtreeSum;
+    }
+
+    */
 }

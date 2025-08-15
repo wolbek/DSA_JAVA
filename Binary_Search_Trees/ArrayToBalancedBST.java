@@ -20,17 +20,21 @@ public class ArrayToBalancedBST {
         System.out.println(root);
     }
 
-    // My first attempt.
+    /* 
+    
+    Your first attempt:
 
-    // public static Node createBalancedBST(int[] arr, int start, int end){
-    //     if(start == end){
-    //         return new Node(arr[start]);
-    //     }
-    //     int mid = (start + end)/2;
-    //     Node root = new Node(arr[mid]);
-    //     if(mid-1 >= start) root.left = createBalancedBST(arr, start, mid-1);
-    //     if(mid+1 <= end) root.right = createBalancedBST(arr, mid+1, end);
+    public static Node createBalancedBST(int[] arr, int start, int end){
+        if(start == end){
+            return new Node(arr[start]);
+        }
+        int mid = (start + end)/2;
+        Node root = new Node(arr[mid]);
+        if(mid-1 >= start) root.left = createBalancedBST(arr, start, mid-1);
+        if(mid+1 <= end) root.right = createBalancedBST(arr, mid+1, end);
 
-    //     return root;
-    // }
+        return root;
+    }
+
+    */
 }

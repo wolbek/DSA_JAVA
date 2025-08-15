@@ -71,35 +71,40 @@ public class MergeBSTs {
         BSTToBalancedBST.preorder(resultRoot);
     }
 
-    // 1st approach of combining. But you can make it simpler as we did above.
-    // public static void combinedInorders(ArrayList<Integer> combinedInorder, ArrayList<Integer> inorder1, ArrayList<Integer> inorder2) {
-    //     int currInorder1Index = 0;
-    //     int currInorder2Index = 0; 
-    //     int currInorder1Element;
-    //     int currInorder2Element;
-    //     for(int i=0;i<=inorder1.size() + inorder2.size()-1;i++){
-    //         if(currInorder1Index > inorder1.size()-1){
-    //             currInorder2Element = inorder2.get(currInorder2Index);
-    //             combinedInorder.add(currInorder2Element);
-    //             currInorder2Index++;
-    //             continue;
-    //         }
-    //         else if(currInorder2Index > inorder2.size()-1){
-    //             currInorder1Element = inorder1.get(currInorder1Index);
-    //             combinedInorder.add(currInorder1Element);
-    //             currInorder1Index++;
-    //             continue;
-    //         } else{
-    //             currInorder1Element = inorder1.get(currInorder1Index);
-    //             currInorder2Element = inorder2.get(currInorder2Index);
-    //             if(currInorder1Element < currInorder2Element){
-    //                 combinedInorder.add(currInorder1Element);
-    //                 currInorder1Index++;
-    //             } else{
-    //                 combinedInorder.add(currInorder2Element);
-    //                 currInorder2Index++;
-    //             }
-    //         }
-    //     }
-    // }
+    /*
+    
+    1st approach of combining. But you can make it simpler as we did above.
+
+    public static void combinedInorders(ArrayList<Integer> combinedInorder, ArrayList<Integer> inorder1, ArrayList<Integer> inorder2) {
+        int currInorder1Index = 0;
+        int currInorder2Index = 0; 
+        int currInorder1Element;
+        int currInorder2Element;
+        for(int i=0;i<=inorder1.size() + inorder2.size()-1;i++){
+            if(currInorder1Index > inorder1.size()-1){
+                currInorder2Element = inorder2.get(currInorder2Index);
+                combinedInorder.add(currInorder2Element);
+                currInorder2Index++;
+                continue;
+            }
+            else if(currInorder2Index > inorder2.size()-1){
+                currInorder1Element = inorder1.get(currInorder1Index);
+                combinedInorder.add(currInorder1Element);
+                currInorder1Index++;
+                continue;
+            } else{
+                currInorder1Element = inorder1.get(currInorder1Index);
+                currInorder2Element = inorder2.get(currInorder2Index);
+                if(currInorder1Element < currInorder2Element){
+                    combinedInorder.add(currInorder1Element);
+                    currInorder1Index++;
+                } else{
+                    combinedInorder.add(currInorder2Element);
+                    currInorder2Index++;
+                }
+            }
+        }
+    }
+
+    */
 }

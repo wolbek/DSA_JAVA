@@ -63,49 +63,53 @@ public class PrefixProblem {
         }
     }
 
-    // My first implementation - calculating maxBranch for each Node and using it
+    /*
+    
+    Your  first implementation - calculating maxBranch for each Node and using it
 
-    // static class Node{
-    //     Node[] children = new Node[26];
-    //     boolean eow = false;
-    //     int maxBranch = 0;
+    static class Node{
+        Node[] children = new Node[26];
+        boolean eow = false;
+        int maxBranch = 0;
         
-    //     Node(){
-    //         for(int i=0;i<26;i++){
-    //             children[i] = null;
-    //         }
-    //     }
-    // }
+        Node(){
+            for(int i=0;i<26;i++){
+                children[i] = null;
+            }
+        }
+    }
 
-    // public static int insert(Node curr, String word){
-    //     if(word.length()==0){
-    //         return 1;
-    //     }
+    public static int insert(Node curr, String word){
+        if(word.length()==0){
+            return 1;
+        }
 
-    //     int nodeIdx = word.charAt(0) - 'a';
-    //     if(curr.children[nodeIdx] == null){
-    //         curr.children[nodeIdx] = new Node();
-    //     }
+        int nodeIdx = word.charAt(0) - 'a';
+        if(curr.children[nodeIdx] == null){
+            curr.children[nodeIdx] = new Node();
+        }
 
-    //     curr.maxBranch = curr.maxBranch + insert(curr.children[nodeIdx], word.substring(1));
-    //     return curr.maxBranch;
-    // }
+        curr.maxBranch = curr.maxBranch + insert(curr.children[nodeIdx], word.substring(1));
+        return curr.maxBranch;
+    }
 
-    // public static String getPrefix(Node root, String word) {
-    //     Node curr = root;
-    //     String s = "";
+    public static String getPrefix(Node root, String word) {
+        Node curr = root;
+        String s = "";
 
 
-    //     for(int i=0;i<word.length();i++){
-    //         int childNodeIdx = word.charAt(i) - 'a';
+        for(int i=0;i<word.length();i++){
+            int childNodeIdx = word.charAt(i) - 'a';
             
-    //         if(curr.maxBranch==1 && curr!=root){
-    //             break;
-    //         }
-    //         s+=word.charAt(i); // Adding child node
-    //         curr = curr.children[childNodeIdx];
-    //     }
+            if(curr.maxBranch==1 && curr!=root){
+                break;
+            }
+            s+=word.charAt(i); // Adding child node
+            curr = curr.children[childNodeIdx];
+        }
 
-    //     return s;
-    // }
+        return s;
+    }
+
+    */
 }

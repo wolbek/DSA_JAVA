@@ -41,39 +41,43 @@ public class ValidBST {
         System.out.println(isValidBST(root, null, null));
     }
 
-    // My first approach. Beats 100% in speed. But only 20% in memory. Solved in Leetcode
+    /*
+    
+    Your first approach. Beats 100% in speed. But only 20% in memory. Solved in Leetcode
 
-    // public static int maxLeftSubtree(Node root){
-    //     if(root == null){
-    //         return Integer.MIN_VALUE;
-    //     }
+    public static int maxLeftSubtree(Node root){
+        if(root == null){
+            return Integer.MIN_VALUE;
+        }
         
-    //     int maxLeft = maxLeftSubtree(root.left);
-    //     int maxRight = maxLeftSubtree(root.right);
+        int maxLeft = maxLeftSubtree(root.left);
+        int maxRight = maxLeftSubtree(root.right);
 
-    //     return (maxLeft > maxRight)? ((maxLeft> root.data)? maxLeft : root.data) : ((maxRight > root.data)? maxRight : root.data);
-    // }
+        return (maxLeft > maxRight)? ((maxLeft> root.data)? maxLeft : root.data) : ((maxRight > root.data)? maxRight : root.data);
+    }
 
-    // public static int minRightSubtree(Node root){
-    //     if(root == null){
-    //         return Integer.MAX_VALUE;
-    //     }
+    public static int minRightSubtree(Node root){
+        if(root == null){
+            return Integer.MAX_VALUE;
+        }
         
-    //     int minLeft = minRightSubtree(root.left);
-    //     int minRight = minRightSubtree(root.right);
+        int minLeft = minRightSubtree(root.left);
+        int minRight = minRightSubtree(root.right);
 
-    //     return (minLeft < minRight)? ((minLeft < root.data)? minLeft : root.data) : ((minRight < root.data)? minRight : root.data);
-    // }
+        return (minLeft < minRight)? ((minLeft < root.data)? minLeft : root.data) : ((minRight < root.data)? minRight : root.data);
+    }
 
-    // public boolean isValidBST(Node root) {
-    //     if(root == null) {
-    //         return true;
-    //     }
+    public boolean isValidBST(Node root) {
+        if(root == null) {
+            return true;
+        }
 
-    //     if(root.data <= maxLeftSubtree(root.left) || root.data >= minRightSubtree(root.right)){
-    //         return false;
-    //     }
+        if(root.data <= maxLeftSubtree(root.left) || root.data >= minRightSubtree(root.right)){
+            return false;
+        }
 
-    //     return isValidBST(root.left) && isValidBST(root.right);
-    // }
+        return isValidBST(root.left) && isValidBST(root.right);
+    }
+
+    */
 }
