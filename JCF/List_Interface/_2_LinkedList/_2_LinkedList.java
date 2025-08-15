@@ -1,4 +1,4 @@
-package JCF.List_Interface;
+package JCF.List_Interface._2_LinkedList;
 
 import java.util.LinkedList;
 
