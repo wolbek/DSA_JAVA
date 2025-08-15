@@ -48,35 +48,39 @@ public class BinarySearchTrees {
         inorderTraversal(root);
     }
 
-    // Your first try:
+    /*
+    
+    Your first attempt:
 
-    // public static void main(String[] args) {
-    //     int[] values = {5,1,3,4,2,7};
-    //     Node root = new Node(values[0]);
-    //     for(int i = 1;i<values.length;i++){
-    //         Node newNode = new Node(values[i]);
-    //         buildBST(newNode, root);
-    //     }
+    public static void main(String[] args) {
+        int[] values = {5,1,3,4,2,7};
+        Node root = new Node(values[0]);
+        for(int i = 1;i<values.length;i++){
+            Node newNode = new Node(values[i]);
+            buildBST(newNode, root);
+        }
 
-    //     inorderTraversal(root);
-    // }
+        inorderTraversal(root);
+    }
 
-    // public static void buildBST(Node newNode, Node root) {
+    public static void buildBST(Node newNode, Node root) {
         
-    //     if(newNode.data < root.data){
-    //         if(root.left == null){
-    //             root.left = newNode;
-    //         } else{
-    //             buildBST(newNode, root.left);
-    //         }
-    //     }
+        if(newNode.data < root.data){
+            if(root.left == null){
+                root.left = newNode;
+            } else{
+                buildBST(newNode, root.left);
+            }
+        }
 
-    //     else if(newNode.data > root.data){
-    //         if(root.right == null){
-    //             root.right = newNode;
-    //         } else{
-    //             buildBST(newNode, root.right);
-    //         }
-    //     }
-    // }
+        else if(newNode.data > root.data){
+            if(root.right == null){
+                root.right = newNode;
+            } else{
+                buildBST(newNode, root.right);
+            }
+        }
+    }
+
+    */
 }
