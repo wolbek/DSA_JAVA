@@ -1,4 +1,4 @@
-package JCF.List_Interface;
+package JCF.List_Interface._3_Stack;
 
 import java.util.Stack;
 
