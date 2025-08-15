@@ -40,41 +40,45 @@ public class LowestCommonAncestor{
         System.out.println(ancestor.data);
     }
 
-// Your first attempt on this challenge. Works but only beats 5% of the world:
+    /*
+    
+    Your first attempt on this challenge. Works but only beats 5% of the world:
 
-//     static Node ancestor = null;
-//     static class Info{
-//         boolean n1Found;
-//         boolean n2Found;
-//         Info(boolean n1Found, boolean n2Found){
-//             this.n1Found = n1Found;
-//             this.n2Found = n2Found;
-//         }
-//     }
-//     public static Info LCA(Node root, int n1, int n2) {
-//         if(root == null){
-//             return new Info(false, false);
-//         }
+    static Node ancestor = null;
+    static class Info{
+        boolean n1Found;
+        boolean n2Found;
+        Info(boolean n1Found, boolean n2Found){
+            this.n1Found = n1Found;
+            this.n2Found = n2Found;
+        }
+    }
+    public static Info LCA(Node root, int n1, int n2) {
+        if(root == null){
+            return new Info(false, false);
+        }
 
-//         Info nodeInfo = new Info(false, false);
+        Info nodeInfo = new Info(false, false);
 
-//         if(root.data == n1) {
-//             nodeInfo = new Info(true, false);
-//         }
+        if(root.data == n1) {
+            nodeInfo = new Info(true, false);
+        }
 
-//         if(root.data == n2) {
-//             nodeInfo = new Info(false, true);
-//         }
+        if(root.data == n2) {
+            nodeInfo = new Info(false, true);
+        }
 
-//         Info leftSubtreeInfo = LCA(root.left, n1, n2);
-//         Info rightSubtreeInfo = LCA(root.right, n1, n2);
+        Info leftSubtreeInfo = LCA(root.left, n1, n2);
+        Info rightSubtreeInfo = LCA(root.right, n1, n2);
 
-//         boolean n1Found = nodeInfo.n1Found || leftSubtreeInfo.n1Found || rightSubtreeInfo.n1Found;
-//         boolean n2Found = nodeInfo.n2Found || leftSubtreeInfo.n2Found || rightSubtreeInfo.n2Found;
+        boolean n1Found = nodeInfo.n1Found || leftSubtreeInfo.n1Found || rightSubtreeInfo.n1Found;
+        boolean n2Found = nodeInfo.n2Found || leftSubtreeInfo.n2Found || rightSubtreeInfo.n2Found;
 
-//         if(ancestor==null && n1Found && n2Found ) {
-//             ancestor = root;
-//         }
-//         return new Info(n1Found, n2Found);       
-//     }
+        if(ancestor==null && n1Found && n2Found ) {
+            ancestor = root;
+        }
+        return new Info(n1Found, n2Found);       
+    }
+
+    */
 }

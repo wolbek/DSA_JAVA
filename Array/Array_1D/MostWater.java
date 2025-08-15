@@ -28,39 +28,43 @@ public class MostWater {
         System.out.println(storeWater(height));
     }
 
-    // My first logic --------------------------------
+    /*
 
-    // public int maxArea(int[] height) {
-    //     int start = 0;
-    //     int end = height.length-1;
-    //     int maxWater = 0;
+    Your first approach:
 
-    //     int newArea = 0;
-    //     int breadth = end-start;
-    //     int length = Math.min(height[start], height[end]);
-    //     int currArea = length*breadth;
-    //     maxWater = currArea;
+    public int maxArea(int[] height) {
+        int start = 0;
+        int end = height.length-1;
+        int maxWater = 0;
+
+        int newArea = 0;
+        int breadth = end-start;
+        int length = Math.min(height[start], height[end]);
+        int currArea = length*breadth;
+        maxWater = currArea;
         
-    //     while(start < end) {
-    //         if(end-start == 1) break; // Only start to end, two rods in total, then we already have the area, no need to execute further.
-    //         while(newArea <= currArea && start<end) { // We calculate newArea until its bigger than currArea
-    //             if(height[start] >= height[end]) { // If end is smaller, we do end-- (as start++, won't increase area)
-    //                 end--;
-    //             } else{ // If start is smaller, we do start++ (as end--, won't increase area)
-    //                 start++;
-    //             }
-    //             breadth = end-start;
-    //             length = Math.min(height[start], height[end]);
-    //             newArea = length*breadth;
-    //         }
+        while(start < end) {
+            if(end-start == 1) break; // Only start to end, two rods in total, then we already have the area, no need to execute further.
+            while(newArea <= currArea && start<end) { // We calculate newArea until its bigger than currArea
+                if(height[start] >= height[end]) { // If end is smaller, we do end-- (as start++, won't increase area)
+                    end--;
+                } else{ // If start is smaller, we do start++ (as end--, won't increase area)
+                    start++;
+                }
+                breadth = end-start;
+                length = Math.min(height[start], height[end]);
+                newArea = length*breadth;
+            }
 
-    //         maxWater = Math.max(maxWater, newArea); // We are ussing max rather than directly assigning newArea, because it may happen that we might not get a newArea which is greater than currArea.
-    //         currArea = newArea;
+            maxWater = Math.max(maxWater, newArea); // We are ussing max rather than directly assigning newArea, because it may happen that we might not get a newArea which is greater than currArea.
+            currArea = newArea;
             
-    //     }
+        }
 
-    //     return maxWater;
-    // }
+        return maxWater;
+    }
+
+    */
 }
 
 

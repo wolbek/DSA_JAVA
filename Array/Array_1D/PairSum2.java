@@ -39,7 +39,8 @@ public class PairSum2 {
 
 
     /*
-    My approach:
+
+    Your first approach:
     
     public static boolean hasPair(int[] list, int target) {
         int p2 = 0;
@@ -69,7 +70,7 @@ public class PairSum2 {
 
         return false;
     }
-     
+
     */
     
 }
