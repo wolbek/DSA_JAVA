@@ -152,6 +152,38 @@ public class LinkedListClass {
         return helper(head, key);
     }
 
+    public void reverse() {
+        Node prevElem = null;
+        Node currElem = null;
+        Node nextElem = head;
+        tail = head;
+        
+        while(nextElem!=null) {
+            prevElem = currElem;
+            currElem = nextElem;
+            nextElem = nextElem.next;
+            currElem.next = prevElem;
+        }
+        head = currElem;
+
+        /*
+        Shradhha's didi code
+        
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while(curr!=null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+         
+         */
+    }
+
     public static void main(String[] args) {
         LinkedListClass ll = new LinkedListClass();
         ll.print();
@@ -177,5 +209,8 @@ public class LinkedListClass {
         System.out.println(ll.searchIteratively(9));
 
         System.out.println(ll.searchRecursively(9));
+
+        ll.reverse();
+        ll.print();
     }
 }
