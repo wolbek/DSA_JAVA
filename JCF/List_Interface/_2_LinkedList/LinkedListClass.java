@@ -184,6 +184,27 @@ public class LinkedListClass {
          */
     }
 
+    public void removeNthNodeFromEnd(int index) { // We're considering they would be passing valid range (from 1 to n)
+        int idxToRemove = size - index;
+
+        if(idxToRemove == 0){
+            removeFirst();
+        } else{
+
+            Node temp = head;
+            int i = 1; 
+            // i is the index of next element
+            // So that if i == idxToRemove, then temp would be the previous element in below while loop
+
+            while(i < idxToRemove) { 
+                temp = temp.next;
+                i++;
+            }
+
+            temp.next = temp.next.next;
+        }
+    }
+
     public static void main(String[] args) {
         LinkedListClass ll = new LinkedListClass();
         ll.print();
@@ -207,10 +228,13 @@ public class LinkedListClass {
         ll.print();
 
         System.out.println(ll.searchIteratively(9));
-
         System.out.println(ll.searchRecursively(9));
 
         ll.reverse();
         ll.print();
+
+        ll.removeNthNodeFromEnd(3);
+        ll.print();
+
     }
 }
