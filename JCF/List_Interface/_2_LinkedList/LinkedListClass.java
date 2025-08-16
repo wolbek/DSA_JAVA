@@ -114,6 +114,22 @@ public class LinkedListClass {
         }
     }
 
+    public int searchIteratively(int key) {
+        Node temp = head;
+        int i = 0;
+
+        while(temp!=null) {
+            if(temp.data == key) { // key found
+                return i;
+            }
+            temp=temp.next;
+            i++;
+        }
+
+        // key not found
+        return -1;
+    }
+
     public static void main(String[] args) {
         LinkedListClass ll = new LinkedListClass();
         ll.print();
@@ -135,5 +151,7 @@ public class LinkedListClass {
         ll.print();
         System.out.println(ll.removeLast());
         ll.print();
+
+        System.out.println(ll.searchIteratively(9));
     }
 }
