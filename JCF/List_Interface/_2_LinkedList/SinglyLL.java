@@ -1,6 +1,6 @@
 package JCF.List_Interface._2_LinkedList;
 
-public class LinkedListClass {
+public class SinglyLL {
     static class Node {
         int data;
         Node next;
@@ -340,7 +340,7 @@ public class LinkedListClass {
     }
 
     public static void main(String[] args) {
-        LinkedListClass ll = new LinkedListClass();
+        SinglyLL ll = new SinglyLL();
 
         // AddFirst
         ll.print(head);
