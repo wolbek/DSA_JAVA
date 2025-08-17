@@ -251,40 +251,75 @@ public class LinkedListClass {
         return true;
     }
 
+    public static boolean isCycle(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         LinkedListClass ll = new LinkedListClass();
+
+        // AddFirst
         ll.print();
         ll.addFirst(2);
         ll.print();
         ll.addFirst(1);
         ll.print();
+
+        // AddLast
         ll.addLast(3);
         ll.print();
         ll.addLast(4);
         ll.print();
-        // For add we're considering they'll pass proper index within valid range.
+
+        // Add at index
+        // For add() we're considering they'll pass proper index within valid range.
         ll.add(2,9);
         ll.print();
 
+        // Print size of LL
         System.out.println(ll.size);
 
+        // Remove - RemoveFirst and RemoveLast
         System.out.println(ll.removeFirst());
         ll.print();
         System.out.println(ll.removeLast());
         ll.print();
 
+        // Search - Iteratively and Recursively
         System.out.println(ll.searchIteratively(9));
         System.out.println(ll.searchRecursively(9));
 
+        // Reverse LL
         ll.reverse();
         ll.print();
 
+        // Remove nth node from end
         ll.removeNthNodeFromEnd(3);
         ll.print();
 
+        // Check for isPalindrome
         ll.addLast(2);
         ll.addLast(9);
         ll.print();
         System.out.println(ll.isPalindrome());
+
+        // Detect a cycle in LL
+        Node head1 = new Node(1);
+        head1.next = new Node(2);
+        head1.next.next = new Node(3);
+        head1.next.next.next = head1;
+        System.out.println(ll.isCycle(head1));
     }
 }
