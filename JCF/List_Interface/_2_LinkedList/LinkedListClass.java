@@ -267,6 +267,39 @@ public class LinkedListClass {
         return false;
     }
 
+    public static void removeCycle(Node head) {
+        // Detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast) {
+                cycle = true;
+                break;
+            }
+        }
+
+        if(cycle == false) {
+            return;
+        }
+
+        // Find meeting point
+        slow= head;
+        Node prev = null; // will store last node
+        while(slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // remove cycle -> last.next = null
+        prev.next = null;
+    }
+
     public static void main(String[] args) {
         LinkedListClass ll = new LinkedListClass();
 
@@ -317,9 +350,15 @@ public class LinkedListClass {
 
         // Detect a cycle in LL
         Node head1 = new Node(1);
-        head1.next = new Node(2);
+        Node temp = new Node(2);
+        head1.next = temp;
         head1.next.next = new Node(3);
-        head1.next.next.next = head1;
-        System.out.println(ll.isCycle(head1));
+        head1.next.next.next = temp;
+        // 1 -> 2 -> 3 -> 2
+        System.out.println(isCycle(head1));
+
+        // Remove cycle
+        removeCycle(head1);
+        System.out.println(isCycle(head1));
     }
 }
