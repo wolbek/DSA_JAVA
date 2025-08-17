@@ -59,7 +59,7 @@ public class LinkedListClass {
         }
     }
 
-    public void print() {
+    public void print(Node head) {
         if(head == null) {
             System.out.println("LL is empty");
             return;
@@ -300,35 +300,74 @@ public class LinkedListClass {
         prev.next = null;
     }
 
+    public void zigZag(Node head) {
+        //find mid
+        Node slow = head;
+        Node fast = head.next;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
+
+        // reverse 2nd half
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+
+        while(curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node left = head;
+        Node right = prev;
+        Node nextL, nextR;
+
+        // zig-zag merge
+        while(left != null && right != null) {
+            nextL = left.next;
+            left.next = right;
+            nextR = right.next;
+            right.next = nextL;
+
+            left = nextL;
+            right = nextR;
+        }
+    }
+
     public static void main(String[] args) {
         LinkedListClass ll = new LinkedListClass();
 
         // AddFirst
-        ll.print();
+        ll.print(head);
         ll.addFirst(2);
-        ll.print();
+        ll.print(head);
         ll.addFirst(1);
-        ll.print();
+        ll.print(head);
 
         // AddLast
         ll.addLast(3);
-        ll.print();
+        ll.print(head);
         ll.addLast(4);
-        ll.print();
+        ll.print(head);
 
         // Add at index
         // For add() we're considering they'll pass proper index within valid range.
         ll.add(2,9);
-        ll.print();
+        ll.print(head);
 
         // Print size of LL
         System.out.println(ll.size);
 
         // Remove - RemoveFirst and RemoveLast
         System.out.println(ll.removeFirst());
-        ll.print();
+        ll.print(head);
         System.out.println(ll.removeLast());
-        ll.print();
+        ll.print(head);
 
         // Search - Iteratively and Recursively
         System.out.println(ll.searchIteratively(9));
@@ -336,29 +375,43 @@ public class LinkedListClass {
 
         // Reverse LL
         ll.reverse();
-        ll.print();
+        ll.print(head);
 
         // Remove nth node from end
         ll.removeNthNodeFromEnd(3);
-        ll.print();
+        ll.print(head);
 
         // Check for isPalindrome
         ll.addLast(2);
         ll.addLast(9);
-        ll.print();
-        System.out.println(ll.isPalindrome());
+        ll.print(head);
+        System.out.println(ll.isPalindrome()); // Now 2nd half is reversed
 
         // Detect a cycle in LL
+        System.out.println("LL has cycle?");
+
+        // Creating a LL (without addFirst or addLast): 1 -> 2 -> 3 -> 2
         Node head1 = new Node(1);
         Node temp = new Node(2);
         head1.next = temp;
         head1.next.next = new Node(3);
         head1.next.next.next = temp;
-        // 1 -> 2 -> 3 -> 2
         System.out.println(isCycle(head1));
 
         // Remove cycle
         removeCycle(head1);
+        System.out.println("LL has cycle?");
         System.out.println(isCycle(head1));
+        ll.print(head1);
+
+        // Zigzag
+        System.out.println("Zigzag: ");
+        Node head2 = new Node(1);
+        head2.next = new Node(2);
+        head2.next.next = new Node(3);
+        head2.next.next.next = new Node(4);
+        head2.next.next.next.next = new Node(5);
+        ll.zigZag(head2);
+        ll.print(head2);
     }
 }
