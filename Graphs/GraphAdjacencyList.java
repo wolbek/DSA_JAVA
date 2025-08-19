@@ -1,6 +1,6 @@
 package Graphs;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class GraphAdjacencyList {
     static class Edge {
@@ -12,6 +12,27 @@ public class GraphAdjacencyList {
             this.src = s;
             this.dest = d;
             this.wt = w;
+        }
+    }
+
+    public static void bfs(ArrayList<Edge>[] graph) {
+        Queue<Integer> adjQ = new LinkedList<>();
+        boolean[] visited = new boolean[graph.length];
+        
+        adjQ.add(0);
+        visited[0] = true;
+        System.out.print(0 + " ");
+
+        while(!adjQ.isEmpty()) {
+            Integer curr = adjQ.remove();
+
+            for(Edge e: graph[curr]){
+                if(visited[e.dest] == false) {
+                    adjQ.add(e.dest);
+                    visited[e.dest] = true;
+                    System.out.print(e.dest + " ");
+                }
+            }
         }
     }
 
@@ -57,5 +78,7 @@ public class GraphAdjacencyList {
             Edge e = graph[0].get(i);
             System.out.println(e.dest);
         }
+
+        bfs(graph);
     }
 }
