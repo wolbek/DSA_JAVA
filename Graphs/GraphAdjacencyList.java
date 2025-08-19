@@ -48,6 +48,22 @@ public class GraphAdjacencyList {
         }
     }
 
+    public static boolean hasPath(ArrayList<Edge>[] graph, boolean[] visited, int curr, int dest) {
+        if(curr == dest) {
+            return true;
+        }
+
+        visited[curr] = true;
+
+        for(Edge e: graph[curr]) {
+            if(!visited[e.dest] && hasPath(graph, visited, e.dest, dest)) {
+                return true;
+            } 
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         /*
                     (40)
@@ -97,5 +113,36 @@ public class GraphAdjacencyList {
         
         System.out.println("\n\nDFS: ");
         dfs(graph, 0, new boolean[V]);
+
+
+        System.out.println("\n\nHas Path?: ");
+        int src = 0;
+        int dest = 1;
+        System.out.println(hasPath(graph, new boolean[V], src, dest));
     }
+
+    /*
+
+    Your hasPath first attempt:
+    In this case, if a path is found earlier in the loop, but a later neighbor doesn't have a path, the result gets overwritten, leading to wrong results.
+
+    public static boolean hasPath(ArrayList<Edge>[] graph, boolean[] visited, int curr, int dest) {
+        if(curr == dest) {
+            return true;
+        }
+
+        boolean foundPath = false;
+        // Visit
+        visited[curr] = true;
+
+        for(Edge e: graph[curr]) {
+            if(!visited[e.dest]) {
+                foundPath = hasPath(graph, visited, e.dest, dest);
+            } 
+        }
+
+        return foundPath;
+    } 
+
+    */
 }
