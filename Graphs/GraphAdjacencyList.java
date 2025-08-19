@@ -16,12 +16,22 @@ public class GraphAdjacencyList {
     }
 
     public static void bfs(ArrayList<Edge>[] graph) {
-        Queue<Integer> adjQ = new LinkedList<>();
         boolean[] visited = new boolean[graph.length];
+        // Loop through all vertices to handle disconnected components
+        for (int i = 0; i < graph.length; i++) {
+            if (!visited[i]) {
+                // Start a BFS traversal from this new component
+                bfsUtil(graph, i, visited); 
+            }
+        }
+    }
+
+    public static void bfsUtil(ArrayList<Edge>[] graph, int startNode, boolean[] visited) {
+        Queue<Integer> adjQ = new LinkedList<>();
         
-        adjQ.add(0);
-        visited[0] = true;
-        System.out.print(0 + " ");
+        adjQ.add(startNode);
+        visited[startNode] = true;
+        System.out.print(startNode + " ");
 
         while(!adjQ.isEmpty()) {
             Integer curr = adjQ.remove();
@@ -36,14 +46,25 @@ public class GraphAdjacencyList {
         }
     }
 
-    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean[] visited) {
+    public static void dfs(ArrayList<Edge>[] graph) {
+        boolean[] visited = new boolean[graph.length];
+        // Loop through all vertices to handle disconnected components
+        for (int i = 0; i < graph.length; i++) {
+            if (!visited[i]) {
+                // Start a DFS traversal from this new component
+                dfsUtil(graph, i, visited); 
+            }
+        }
+    }
+
+    public static void dfsUtil(ArrayList<Edge>[] graph, int curr, boolean[] visited) {
         // Visit
         System.out.print(curr + " ");
         visited[curr] = true;
 
         for(Edge e: graph[curr]) {
             if(visited[e.dest] == false) {
-                dfs(graph, e.dest, visited);
+                dfsUtil(graph, e.dest, visited);
             }
         }
     }
@@ -112,7 +133,7 @@ public class GraphAdjacencyList {
         bfs(graph);
         
         System.out.println("\n\nDFS: ");
-        dfs(graph, 0, new boolean[V]);
+        dfs(graph);
 
 
         System.out.println("\n\nHas Path?: ");
