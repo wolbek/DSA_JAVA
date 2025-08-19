@@ -36,6 +36,18 @@ public class GraphAdjacencyList {
         }
     }
 
+    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean[] visited) {
+        // Visit
+        System.out.print(curr + " ");
+        visited[curr] = true;
+
+        for(Edge e: graph[curr]) {
+            if(visited[e.dest] == false) {
+                dfs(graph, e.dest, visited);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         /*
                     (40)
@@ -74,11 +86,16 @@ public class GraphAdjacencyList {
         graph[3].add(new Edge(3, 2, 20));
 
         // 0's neighbors
+        System.out.println("0's neighbors: ");
         for(int i=0; i<graph[0].size(); i++) {
             Edge e = graph[0].get(i);
-            System.out.println(e.dest);
+            System.out.print(e.dest + " ");
         }
 
+        System.out.println("\n\nBFS: ");
         bfs(graph);
+        
+        System.out.println("\n\nDFS: ");
+        dfs(graph, 0, new boolean[V]);
     }
 }
