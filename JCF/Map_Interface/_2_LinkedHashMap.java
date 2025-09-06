@@ -9,10 +9,10 @@ public class _2_LinkedHashMap {
                                                 |          2) LinkedHashMap           |
                                                 =======================================
          
-        It uses Doubly LinkedList inside, that’s how its order is maintained
+        Immplementation: In array, it uses Doubly LinkedList inside rather than Linked List, that’s how its order is maintained.
         Has same time complexity like Hashmaps for all operations
         Keys are insertion ordered
-        Performance somewhat lower than HashMap
+        Performance somewhat lower than HashMap (due to the additional task of maintaining a doubly-linked list. )
 
         */
 
