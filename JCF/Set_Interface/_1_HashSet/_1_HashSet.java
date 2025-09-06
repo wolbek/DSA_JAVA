@@ -1,4 +1,4 @@
-package JCF.Set_Interface;
+package JCF.Set_Interface._1_HashSet;
 
 import java.util.HashSet;
 import java.util.Iterator;
