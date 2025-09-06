@@ -20,6 +20,9 @@ public class _1_HashSet {
         //Creation
         HashSet<Integer> set=new HashSet<>();//Operation happens in O(1)
 
+        //To clear the set
+        set.clear();
+
         //To add element - TC: O(1)
         set.add(30);
         set.add(31);
@@ -35,11 +38,7 @@ public class _1_HashSet {
         //To get size
         set.size();
 
-
         System.out.println(set);//Prints in random way [32,65,2,21,54]
-
-        //To clear the set
-        set.clear();
 
         //To check if set is empty or not
         set.isEmpty();
@@ -55,15 +54,13 @@ public class _1_HashSet {
 
             We store the iterator in iterator type object:
 
-            
-         
          */
         Iterator i = set.iterator();
         while(i.hasNext()){
             System.out.println(i.next());//i.next() leads to i changing its value 
         }
 
-        //2nd way - Using enhanced for loop
+        //2nd way - Using for each loop
         for(Integer num: set){
             System.out.println(num);
         }
