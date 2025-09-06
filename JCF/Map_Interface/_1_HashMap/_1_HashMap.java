@@ -1,17 +1,22 @@
-package JCF.Map_Interface;
+package JCF.Map_Interface._1_HashMap;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class _1_HashMap {
+    // To take HashMap as argument and return HashMap from function:
+    public HashMap<String, Integer> createEmployeeMap(HashMap<String, Integer> map) {
+        return map;
+    }
     public static void main(String[] args) {
         /*
                                                 =======================================
-                                                |               1) Map                |
+                                                |               1) HashMap                |
                                                 =======================================
          
 
-        Definition - Map is a data structure that store 2 things: key & value
+        Definition - HashMap is a data structure that store 2 things: key & value
+        Keys are stored in unordered fashion.
         Key is always unique.
         Add, remove, get all have O(1) Time complexity.
 
@@ -20,11 +25,14 @@ public class _1_HashMap {
         //Creation
         HashMap<String,Integer> map=new HashMap<>();
 
+        //To clear the hashmap
+        map.clear();
+
         //Add Element - TC: O(1)
         map.put("One",1);
         map.put("Two",2);//{One=1,Two=2}
         map.put("Three",3);//{One=1, Two=2, Three=3}
-        System.out.println(map);
+        System.out.println(map); //{One=1, Two=2, Three=3}
 
         //Remove Key - TC: O(1)
         map.remove("Three");//If a key is passed which does not exist then it returns null value
@@ -33,16 +41,16 @@ public class _1_HashMap {
         System.out.println(map.size());
 
         //Get Element - TC: O(1)
-        map.get("One");//To get the value of the key passed as argument
+        map.get("One");//To get the value of the key passed as argument. If a key is passed which does not exist then it returns null value.
         map.getOrDefault("Three", 0);//To get the value of the key passed as argument. If key not present, return default value.
 
         //To overide value of a specific key - TC: O(1)
         map.put("Two",23);
 
-        //To check if map contains a key - TC: O(1)
+        // Contains key - To check if map contains a key - TC: O(1)
         System.out.println("Map contains key 'Two'? : "+map.containsKey("Two"));
 
-        //To Put a key if key not presental:
+        //To Put a key if key not present:
         if(!map.containsKey("Two"))
         map.put("Two",23);
         //Or
@@ -74,13 +82,5 @@ public class _1_HashMap {
 
         //To check if hashmap is empty
         System.out.println(map.isEmpty());
-
-        // To return HashMap from function:
-        // public HashMap<String, Integer> createEmployeeMap() {
-        //     // ...
-        // }
-
-        //To clear the hashmap
-        map.clear();
     }
 }
