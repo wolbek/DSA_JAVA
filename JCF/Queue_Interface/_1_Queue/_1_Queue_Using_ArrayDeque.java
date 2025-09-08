@@ -1,4 +1,4 @@
-package JCF.Queue_Interface;
+package JCF.Queue_Interface._1_Queue;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
