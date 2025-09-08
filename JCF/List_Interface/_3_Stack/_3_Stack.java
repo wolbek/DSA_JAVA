@@ -42,10 +42,10 @@ public class _3_Stack {
         System.out.println("Is Empty?: "+s.isEmpty());
 
         //See value at top
-        System.out.println("Top element: "+s.peek());
+        System.out.println("Top element: "+s.peek()); // Gives error if stack is empty
 
         //To pop value at top and return that value
-        System.out.println("Popped top Element"+s.pop());
+        System.out.println("Popped top Element"+s.pop()); // Gives error if stack is empty
 
         //Print stack
         System.out.println("Printing stack in 2 ways: 1) Direct 2) For each");
